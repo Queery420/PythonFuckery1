@@ -6,8 +6,6 @@
 # Search.
 
 
-Finished = False
-
 print('Please enter the side length: ', end='')
 BoardSide = input()
 
