@@ -15,13 +15,6 @@ def main():
     knightVisits = [""]*(BoardSide ^ 2)
     numKnightVisits = (BoardSide ^ 2) - 1
 
-    def knightVisit(x, y):
-        if Board[x][y]:
-            toReturn = False
-        else:
-            toReturn = True
-        return toReturn
-
 
     def checkBoard():
         for i in range(BoardSide):
@@ -32,66 +25,75 @@ def main():
 
 
     def getKnightVisit(x, y):
-        
-        numKnightVisits = (BoardSide ^ 2) - 1
+
         Board[x][y] = True
         # +2, +1
         if ((x + 2) < BoardSide) and ((y + 1) < BoardSide):
             if Board[(x + 2)][(y + 1)] == False:
                 if getKnightVisit(x + 2, y + 1):
-                    knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
-                    numKnightVisits = numKnightVisits - 1
+                    print (str(x) + ", " + str(y))
+                    #knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
+                    #numKnightVisits = numKnightVisits - 1
                     return True
         # +2, -1
         if ((x + 2) < BoardSide) and ((y - 1) >= 0):
-            if knightVisit(x + 2, y - 1):
+            if Board[(x + 2)][(y - 1)] == False:
                 if getKnightVisit(x + 2, y - 1):
-                    knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
-                    numKnightVisits = numKnightVisits - 1
+                    print (str(x) + ", " + str(y))
+                    #knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
+                    #numKnightVisits = numKnightVisits - 1
                     return True
         # +1, +2
         if ((x + 1) < BoardSide) and ((y + 2) < BoardSide):
-            if knightVisit(x + 1, y + 2):
+            if Board[(x + 1)][(y + 2)] == False:
                 if getKnightVisit(x + 1, y + 2):
-                    knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
-                    numKnightVisits = numKnightVisits - 1
+                    print (str(x) + ", " + str(y))
+                    #knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
+                    #numKnightVisits = numKnightVisits - 1
                     return True
         # +1, -2
         if ((x + 1) < BoardSide) and ((y - 2) >= 0):
-            if knightVisit(x + 1, y - 2):
+            if Board[(x + 1)][(y - 2)] == False:
                 if getKnightVisit(x + 1, y - 2):
-                    knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
-                    numKnightVisits = numKnightVisits - 1
+                    print (str(x) + ", " + str(y))
+                    #knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
+                    #numKnightVisits = numKnightVisits - 1
                     return True
         # -1, +2
         if ((x - 1) >= 0) and ((y + 2) < BoardSide):
-            if knightVisit(x - 1, y + 2):
+            if Board[(x - 1)][(y + 2)] == False:
                 if getKnightVisit(x - 1, y + 2):
-                    knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
-                    numKnightVisits = numKnightVisits - 1
+                    print (str(x) + ", " + str(y))
+                    #knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
+                    #numKnightVisits = numKnightVisits - 1
                     return True
         # -1, -2
         if ((x - 1) >= 0) and ((y - 2) >= 0):
-            if knightVisit(x - 1, y - 2):
+            if Board[(x - 1)][(y - 2)] == False:
                 if getKnightVisit(x - 1, y - 2):
-                    knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
-                    numKnightVisits = numKnightVisits - 1
+                    print (str(x) + ", " + str(y))
+                    #knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
+                    #numKnightVisits = numKnightVisits - 1
                     return True
         # -2, +1
         if ((x - 2) >= 0) and ((y + 1) < BoardSide):
-            if knightVisit(x - 2, y + 1):
+            if Board[(x - 2)][(y + 1)] == False:
                 if getKnightVisit(x - 2, y + 1):
-                    knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
-                    numKnightVisits = numKnightVisits - 1
+                    print (str(x) + ", " + str(y))
+                    #knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
+                    #numKnightVisits = numKnightVisits - 1
                     return True
         # -2, -1
         if ((x - 2) >= 0) and ((y - 1) >= 0):
-            if knightVisit(x - 2, y - 1):
+            if Board[(x - 2)][(y - 1)] == False:
                 if getKnightVisit(x - 2, y - 1):
-                    knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
-                    numKnightVisits = numKnightVisits - 1
+                    print (str(x) + ", " + str(y))
+                    #knightVisit[numKnightVisits] = str(x + 1) + ", " + str(y + 1)
+                    #numKnightVisits = numKnightVisits - 1
                     return True
         if checkBoard():
+            print("hell yeah")
+            print (str(x) + ", " + str(y))
             return True
         else:
             Board[x][y] = False
