@@ -11,9 +11,9 @@ def main():
     print('Please enter the side length: ', end='')
     BS = input()
     BoardSide = int(BS)
-    Board = [[False]*BoardSide]*BoardSide
-    knightVisits = [""]*(BoardSide ^ 2)
-    numKnightVisits = (BoardSide ^ 2) - 1
+    Board = [[False for _ in range(BoardSide)] for _ in range(BoardSide)]
+    knightVisits = [""]*(BoardSide ** 2)
+    numKnightVisits = (BoardSide ** 2) - 1
 
 
     def checkBoard():
@@ -27,11 +27,8 @@ def main():
     def getKnightVisit(x, y):
 
 
-        global knightVisits
-        global numKnightVisits
-        
         Board[x][y] = True
-        
+
         # +2, +1
         if ((x + 2) < BoardSide) and ((y + 1) < BoardSide):
             if Board[(x + 2)][(y + 1)] == False:
