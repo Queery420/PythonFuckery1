@@ -26,6 +26,9 @@ def main():
 
     def getKnightVisit(x, y):
 
+        nonlocal numKnightVisits
+        nonlocal knightVisits
+        nonlocal Board
 
         Board[x][y] = True
 
@@ -105,7 +108,7 @@ def main():
     if getKnightVisit(0, 0):
         print("The Knight's Visits, in order:")
         for i in range(len(knightVisits)):
-            print(knightVisits[i])
+            print(str(i + 1) + ": " + knightVisits[i])
     else:
         print("It didn't work")
 
